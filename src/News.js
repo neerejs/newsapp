@@ -4,8 +4,9 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image';
 import { Container } from 'react-bootstrap';
+import axios from 'axios';
 
-var axios = require("axios").default;
+
 
 const News = () => {
 
@@ -27,7 +28,7 @@ const News = () => {
         // setNews(data.articles);
         // console.log(news);
 
-        var axios = require("axios").default;
+        
 
         var options = {
             method: 'GET',
@@ -69,7 +70,7 @@ const News = () => {
                                 <Col md={5}>
                                     {item.summary}
                                     <br></br>
-                                    <a target = "_blank" href = {item.link}>Read More</a>
+                                    <a rel="noreferrer" target = "_blank" href = {item.link}>Read More</a>
                                 </Col>
                                 <Col md={4}>
                                     
