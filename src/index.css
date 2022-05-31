@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.linkStyle {
+  color: #ce2127;
+  text-decoration:  none;
+  font-size: 20px;
+}

@@ -101,6 +101,9 @@ const News = () => {
                                     <Col md={8}>
 
                                         {item.summary}
+                                        <br></br>
+                                        
+                                        <a rel="noreferrer" target="_blank" href={item.link} className="linkStyle">Read More</a>
 
                                     </Col>
 
