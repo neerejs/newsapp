@@ -89,6 +89,7 @@ const News = () => {
                         <Row>
 
                             <Col >
+                            
                                 <Image fluid src={item.media} className="float-sm-start" />
                                 {/* <img src={item.media}  className="float-sm-start img-fluid" alt="..." style={{paddingRight:'20px'}}/> */}
                                 {item.summary}
@@ -122,10 +123,8 @@ const News = () => {
             <Container>
 
                 <Row style={{ marginBottom: '20px', marginTop: '10px' }}>
-                    <Col md={2} >
-
-                    </Col>
-                    <Col md={6}>
+                   
+                    <Col>
                         <Header title="Search News" />
                         <Row style={{ marginTop: "20px" }}>
                             <Col >
