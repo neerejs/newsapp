@@ -3,11 +3,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image';
-import { Container } from 'react-bootstrap';
+import { Container, ListGroupItem } from 'react-bootstrap';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
+import Header from './Header';
+
 
 
 const News = () => {
@@ -66,7 +68,7 @@ const News = () => {
             console.log(response.data);
             setNews(response.data.articles);
         }).catch(function (error) {
-            console.error(error);
+            //console.error(error);
         });
 
 
@@ -82,39 +84,22 @@ const News = () => {
                 <div key={index}>
 
 
-                    <ListGroup.Item>
+                    <ListGroupItem>
 
                         <Row>
 
-                         
                             <Col >
+                                <Image fluid src={item.media} className="float-sm-start" />
+                                {/* <img src={item.media}  className="float-sm-start img-fluid" alt="..." style={{paddingRight:'20px'}}/> */}
+                                {item.summary}
+                                <br></br>
 
-                                <Row>
-
-
-
-                                    <Col md={4} >
-                                        <Image fluid src={item.media} className="float-sm-start"/>
-                                        {/* <img src={item.media}  className="float-sm-start img-fluid" alt="..." style={{paddingRight:'20px'}}/> */}
-
-                                    </Col>
-                                    <Col md={8}>
-
-                                        {item.summary}
-                                        <br></br>
-                                        
-                                        <a rel="noreferrer" target="_blank" href={item.link} className="linkStyle">Read More</a>
-
-                                    </Col>
-
-                                </Row>
-
+                                <a rel="noreferrer" target="_blank" href={item.link} className="linkStyle">Read More</a>
 
                             </Col>
-                         
                         </Row>
 
-                    </ListGroup.Item>
+                    </ListGroupItem>
 
                 </div>
             )
@@ -122,7 +107,8 @@ const News = () => {
         return contentsArray;
     }
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.preventDefault();
         loadData(searchtext)
 
 
@@ -137,9 +123,11 @@ const News = () => {
 
                 <Row style={{ marginBottom: '20px', marginTop: '10px' }}>
                     <Col md={2} >
+
                     </Col>
-                    <Col md={8}>
-                        <Row >
+                    <Col md={6}>
+                        <Header title="Search News" />
+                        <Row style={{ marginTop: "20px" }}>
                             <Col >
                                 <Form className="d-flex" >
                                     <FormControl
@@ -150,12 +138,16 @@ const News = () => {
                                         value={searchtext}
                                         onChange={(e) => setSearchText(e.target.value)}
                                     />
-                                    <Button onClick={handleClick} variant="outline-success" type="button" >Search</Button>
+
+
+                                    <Button onClick={(e) => handleClick(e)} variant="outline-success" type="submit" >Search</Button>
                                 </Form>
                             </Col>
 
                         </Row>
-                        <Row style={{marginTop:"20px"}}>
+
+                        <Row style={{ marginTop: "20px" }}>
+
                             <Col>
                                 <ListGroup>
                                     {getContents()}
@@ -164,8 +156,7 @@ const News = () => {
                             </Col>
                         </Row>
                     </Col>
-                    <Col md={2}>
-                    </Col>
+                    
                 </Row>
 
 
