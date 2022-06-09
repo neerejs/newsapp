@@ -2,7 +2,7 @@
 
 import { Col, Container, Row } from 'react-bootstrap';
 import Guardian from './Guardian';
-import LatestNews from './LatestNews';
+
 import News from './News';
 import TopNav from './TopNav';
 
