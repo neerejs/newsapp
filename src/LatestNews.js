@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ListGroupItem from 'react-bootstrap/ListGroupItem';
-import Image from 'react-bootstrap/Image';
 import { Container } from 'react-bootstrap';
 
 import Header from './Header.js';
