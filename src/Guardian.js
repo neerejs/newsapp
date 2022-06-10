@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, ListGroupItem, Form, FormControl, Button } from "react-bootstrap";
 import Header from './Header.js';
+import { DateTime } from "luxon";
 
 
 const Guardian = () => {
@@ -9,7 +10,7 @@ const Guardian = () => {
     const [searchtext, setSearchText] = useState("")
 
     //const API_KEY = '08a46ee6-3582-46b5-b4ef-87a7578e48f1';
-    const API_URL = 'https://content.guardianapis.com/search?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1';
+    const API_URL = 'https://content.guardianapis.com/search?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1&';
 
     useEffect(() => {
         loadData();
@@ -86,6 +87,12 @@ const Guardian = () => {
         const contentsArray = []
         news.forEach((item, index) => {
             console.log(item);
+
+            let newsCreateDate = "";
+            if (item.webPublicationDate) {
+                newsCreateDate = DateTime.fromISO(item.webPublicationDate).toLocaleString(DateTime.DATETIME_FULL)
+            }
+
             contentsArray.push(
                 <div key={index}>
                     <Container>
@@ -99,7 +106,7 @@ const Guardian = () => {
                                     {item.webTitle}
                                 </ListGroupItem>
                                 <ListGroupItem>
-                                    {item.webPublicationDate}
+                                    {newsCreateDate}
                                 </ListGroupItem>
                                 <hr></hr>
                             </Col>
@@ -128,7 +135,7 @@ const Guardian = () => {
                 <Container>
                     <Row>
                         <Col style={{ marginTop: "10px", marginBottom: "20px" }}>
-                            <Header title="Latest News" />
+                            <Header title="Guardian API" />
                             <Row style={{ marginTop: "20px" }}>
                                 <Col >
                                     <Form className="d-flex" >

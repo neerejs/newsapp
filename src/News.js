@@ -125,7 +125,7 @@ const News = () => {
                 <Row style={{ marginBottom: '20px', marginTop: '10px' }}>
                    
                     <Col>
-                        <Header title="Search News" />
+                        <Header title="Newscatcher API" />
                         <Row style={{ marginTop: "20px" }}>
                             <Col >
                                 <Form className="d-flex" >
