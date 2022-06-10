@@ -1,9 +1,10 @@
 
 
 import { Col, Container, Row } from 'react-bootstrap';
-import Guardian from './Guardian';
+//import Guardian from './Guardian';
 
 import News from './News';
+import Sections from './Sections';
 import TopNav from './TopNav';
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
             <News />
           </Col>
           <Col>
-            <Guardian />
+            {/* <Guardian /> */}
+            <Sections />
           </Col>
         </Row>
       </Container>
