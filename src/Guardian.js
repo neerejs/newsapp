@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, ListGroupItem, Form, FormControl, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, FormControl, Button } from "react-bootstrap";
 import Header from './Header.js';
-import { DateTime } from "luxon";
+// import { DateTime } from "luxon";
 
 
 const Guardian = () => {
@@ -10,7 +10,7 @@ const Guardian = () => {
     const [searchtext, setSearchText] = useState("")
 
     //const API_KEY = '08a46ee6-3582-46b5-b4ef-87a7578e48f1';
-    const API_URL = 'https://content.guardianapis.com/search?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1&';
+    const API_URL = 'https://content.guardianapis.com/editions?q=uk&api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1&';
 
     useEffect(() => {
         loadData();
@@ -88,27 +88,17 @@ const Guardian = () => {
         news.forEach((item, index) => {
             console.log(item);
 
-            let newsCreateDate = "";
-            if (item.webPublicationDate) {
-                newsCreateDate = DateTime.fromISO(item.webPublicationDate).toLocaleString(DateTime.DATETIME_FULL)
-            }
+            // let newsCreateDate = "";
+            // if (item.webPublicationDate) {
+            //     newsCreateDate = DateTime.fromISO(item.webPublicationDate).toLocaleString(DateTime.DATETIME_FULL)
+            // }
 
             contentsArray.push(
                 <div key={index}>
                     <Container>
                         <Row>
                             <Col>
-                                <h6>{item.sectionName}</h6>
-
-
-
-                                <ListGroupItem>
-                                    {item.webTitle}
-                                </ListGroupItem>
-                                <ListGroupItem>
-                                    {newsCreateDate}
-                                </ListGroupItem>
-                                <hr></hr>
+                                <h6>{item.edition}</h6>
                             </Col>
                         </Row>
                     </Container>
