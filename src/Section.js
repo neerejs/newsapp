@@ -3,7 +3,7 @@ import { Container, Row, Col, Button} from "react-bootstrap";
 
 const Section = () => {
     
-    const [editions, setEditions] = useState([]);
+   //const [editions, setEditions] = useState([]);
     const [sections, setSections] = useState([]);
 
     useEffect(() => {

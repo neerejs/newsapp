@@ -46,7 +46,7 @@ import { useState, useEffect } from "react";
 
 const TopNav = (props) => {
     const [editions, setEditions] = useState([]);
-    const [sections, setSections] = useState([]);
+    //const [sections, setSections] = useState([]);
 
     useEffect(() => {
         loadData();

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Image} from "react-bootstrap";
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser';
 
 
 const Guardian = (props) => {
