@@ -122,11 +122,14 @@ return (
                                 {getEditions()}
                                
                             </NavDropdown>
-                            <NavDropdown title="Sections" id="basic-nav-dropdown">
+                            {/* <NavDropdown title="Sections" id="basic-nav-dropdown">
                                
                                 {getSections()}
                                
-                            </NavDropdown>
+                            </NavDropdown> */}
+                            <LinkContainer to="/sections">
+                                <Nav.Link >Sections</Nav.Link>
+                            </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
