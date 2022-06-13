@@ -50,7 +50,7 @@ const TopNav = (props) => {
 
     useEffect(() => {
         loadData();
-        loadData2();
+        //loadData2();
         // eslint-disable-next-line
     }, []);
 
