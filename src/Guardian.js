@@ -30,7 +30,7 @@ const Guardian = (props) => {
         
         sections.forEach((section, index) => {
             console.log(section.fields.thumbnail)
-            let body = parse(section.fields.body)
+           // let body = parse(section.fields.body)
             sectionsArray.push(
                 // <a href={section.webUrl} target="_blank" rel="noreferrer">
                 // <Button style={{margin:'5px'}}>{section.webTitle}</Button>

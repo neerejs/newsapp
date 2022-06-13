@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Button, Image } from "react-bootstrap";
+import { Container, Row, Col, Button} from "react-bootstrap";
 
 const Section = () => {
     
@@ -12,13 +12,13 @@ const Section = () => {
         // eslint-disable-next-line
     }, []);
 
-    const loadData = async (searchvalue) => {
-        const API_URL = 'https://content.guardianapis.com/editions?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1';
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        setEditions(data.response.results);
+    // const loadData = async (searchvalue) => {
+    //     const API_URL = 'https://content.guardianapis.com/editions?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1';
+    //     const response = await fetch(API_URL);
+    //     const data = await response.json();
+    //     setEditions(data.response.results);
 
-    }
+    // }
 
     const loadData2 = async (searchvalue) => {
        
@@ -30,17 +30,17 @@ const Section = () => {
     }
 
 
-const getEditions = () => {
-    const editionsArray=[]
-    editions.forEach((edition,index)=> {
-        editionsArray.push (
+// const getEditions = () => {
+//     const editionsArray=[]
+//     editions.forEach((edition,index)=> {
+//         editionsArray.push (
        
-       // <NavDropdown.Item href={edition.webUrl} target="_blank">{edition.edition}</NavDropdown.Item>
+//        // <NavDropdown.Item href={edition.webUrl} target="_blank">{edition.edition}</NavDropdown.Item>
        
-        )
-    })
-    return editionsArray
-}
+//         )
+//     })
+//     return editionsArray
+// }
 
 
 const getSections = () => {

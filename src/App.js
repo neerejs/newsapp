@@ -3,8 +3,8 @@
 import { Col, Container, Row } from 'react-bootstrap';
 //import Guardian from './Guardian';
 
-import News from './News';
-import NewsBySection from './NewsBySection';
+// import News from './News';
+// import NewsBySection from './NewsBySection';
 // import NewsByEdition from './NewsByEdition';
 // import Sections from './Sections';
 // import TopNav from './TopNav';

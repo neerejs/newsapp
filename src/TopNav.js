@@ -83,17 +83,17 @@ const getEditions = () => {
     return editionsArray
 }
 
-const getSections = () => {
-    const sectionsArray=[]
-    sections.forEach((section,index)=> {
-        sectionsArray.push (
+// const getSections = () => {
+//     const sectionsArray=[]
+//     sections.forEach((section,index)=> {
+//         sectionsArray.push (
        
-        <NavDropdown.Item href={section.webUrl} target="_blank">{section.webTitle}</NavDropdown.Item>
+//         <NavDropdown.Item href={section.webUrl} target="_blank">{section.webTitle}</NavDropdown.Item>
        
-        )
-    })
-    return sectionsArray
-}
+//         )
+//     })
+//     return sectionsArray
+// }
 
 return (
     <>
