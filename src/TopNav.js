@@ -46,7 +46,7 @@ import { useState, useEffect } from "react";
 
 const TopNav = (props) => {
     const [editions, setEditions] = useState([]);
-    const [sections, setSections] = useState([]);
+    //const [sections, setSections] = useState([]);
 
     useEffect(() => {
         loadData();
@@ -62,13 +62,13 @@ const TopNav = (props) => {
 
     }
 
-    const loadData2 = async (searchvalue) => {
-        const API_URL = 'https://content.guardianapis.com/sections?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1';
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        setSections(data.response.results);
+    // const loadData2 = async (searchvalue) => {
+    //     const API_URL = 'https://content.guardianapis.com/sections?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1';
+    //     const response = await fetch(API_URL);
+    //     const data = await response.json();
+    //     setSections(data.response.results);
 
-    }
+    // }
 
 
 const getEditions = () => {
