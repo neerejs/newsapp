@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Image} from "react-bootstrap";
-import Header from './Header.js';
+
 import parse from 'html-react-parser';
 import { DateTime } from "luxon";
 
