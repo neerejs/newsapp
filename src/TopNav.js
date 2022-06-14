@@ -71,74 +71,74 @@ const TopNav = (props) => {
     // }
 
 
-const getEditions = () => {
-    const editionsArray=[]
-    editions.forEach((edition,index)=> {
-        editionsArray.push (
-       
-        <NavDropdown.Item href={edition.webUrl} target="_blank">{edition.edition}</NavDropdown.Item>
-       
-        )
-    })
-    return editionsArray
-}
+    const getEditions = () => {
+        const editionsArray = []
+        editions.forEach((edition, index) => {
+            editionsArray.push(
 
-// const getSections = () => {
-//     const sectionsArray=[]
-//     sections.forEach((section,index)=> {
-//         sectionsArray.push (
-       
-//         <NavDropdown.Item href={section.webUrl} target="_blank">{section.webTitle}</NavDropdown.Item>
-       
-//         )
-//     })
-//     return sectionsArray
-// }
+                <NavDropdown.Item href={edition.webUrl} target="_blank">{edition.edition}</NavDropdown.Item>
 
-return (
-    <>
-        <div >
+            )
+        })
+        return editionsArray
+    }
 
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="/">
-                        <img
-                            alt=""
-                            src={neerejLogo}
-                            width="50"
-                            height="50"
-                            className="d-inline-block align-top"
-                        />{' '}
-                        <span style={{ fontSize: "30px" }}>Neerej's News Page</span>
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <LinkContainer to="/">
-                                <Nav.Link >Home</Nav.Link>
-                            </LinkContainer>
-                            <NavDropdown title="Editions" id="basic-nav-dropdown">
-                               
-                                {getEditions()}
-                               
-                            </NavDropdown>
-                            {/* <NavDropdown title="Sections" id="basic-nav-dropdown">
+    // const getSections = () => {
+    //     const sectionsArray=[]
+    //     sections.forEach((section,index)=> {
+    //         sectionsArray.push (
+
+    //         <NavDropdown.Item href={section.webUrl} target="_blank">{section.webTitle}</NavDropdown.Item>
+
+    //         )
+    //     })
+    //     return sectionsArray
+    // }
+
+    return (
+        <>
+            <div >
+
+                <Navbar bg="dark" variant="dark">
+                    <Container>
+                        <Navbar.Brand href="/">
+                            <img
+                                alt=""
+                                src={neerejLogo}
+                                width="50"
+                                height="50"
+                                className="d-inline-block align-top"
+                            />{' '}
+                            <span style={{ fontSize: "30px" }}>Neerej's News Page</span>
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <LinkContainer to="/">
+                                    <Nav.Link >Home</Nav.Link>
+                                </LinkContainer>
+                                <NavDropdown title="Editions" id="basic-nav-dropdown">
+
+                                    {getEditions()}
+
+                                </NavDropdown>
+                                {/* <NavDropdown title="Sections" id="basic-nav-dropdown">
                                
                                 {getSections()}
                                
                             </NavDropdown> */}
-                            <LinkContainer to="/sections">
-                                <Nav.Link >Sections</Nav.Link>
-                            </LinkContainer>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+                                <LinkContainer to="/sections">
+                                    <Nav.Link >Sections</Nav.Link>
+                                </LinkContainer>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
 
-        </div>
+            </div>
 
-    </>
-)
+        </>
+    )
 }
 
 export default TopNav;
