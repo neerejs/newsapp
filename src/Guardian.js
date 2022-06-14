@@ -43,7 +43,7 @@ const Guardian = (props) => {
                 // </a>
 
                 <Row>
-                    <Header title={section.fields.headline}></Header>
+                    <h1 title={section.fields.headline}></h1>
 
                     <Col style={{marginBottom:"10px", marginTop:'20px'}} md={4}>
                         

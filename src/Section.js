@@ -42,9 +42,9 @@ const Section = () => {
 //     return editionsArray
 // }
 
-const handleClick = () => {
+const handleClick = (name) => {
    
-   alert("Hello");
+   alert(name);
 }
 
 const getSections = () => {
@@ -54,7 +54,7 @@ const getSections = () => {
        
         //<NavDropdown.Item href={section.webUrl} target="_blank">{section.webTitle}</NavDropdown.Item>
        //<a href={section.webUrl} target="_blank" rel="noreferrer">
-        <Button onClick= {() => handleClick()} style={{margin:'5px'}}>{section.webTitle}</Button>
+        <Button onClick= {() => handleClick(section.webTitle)} style={{margin:'5px'}}>{section.webTitle}</Button>
        //</a>
         )
     })
