@@ -7,22 +7,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TopNav from './TopNav.js';
 import Section from './Section.js';
+import Editions from './Editions.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>
-
   <>
-
-  <BrowserRouter>
-  <TopNav />
-  <Routes>
-    <Route path="/" element={<App  />}> </Route>
-    <Route path="/sections" element={<Section  />}> </Route>
-  </Routes>
-  </BrowserRouter>
+    <BrowserRouter>
+      <TopNav />
+      <Routes>
+        <Route path="/" element={<App />}> </Route>
+        <Route path="/sections" element={<Section />}> </Route>
+        <Route path="/editions" element={<Editions />}> </Route>
+      </Routes>
+    </BrowserRouter>
   </>
 );
 

@@ -2,13 +2,9 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 
-const NewsBySection = (props) => {
+const NewsBySection = () => {
 
     const [sections, setSections] = useState([]);
-
-
-    //const API_KEY = '08a46ee6-3582-46b5-b4ef-87a7578e48f1';
-    //const API_URL = 'https://content.guardianapis.com/search?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1';
 
     useEffect(() => {
         loadData();
@@ -35,8 +31,6 @@ const NewsBySection = (props) => {
         })
         return sectionsArray
     }
-
-
 
     return (<>
         <div>

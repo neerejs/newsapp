@@ -1,14 +1,6 @@
-
-
 import { Col, Container, Row } from 'react-bootstrap';
-//import Guardian from './Guardian';
-
-// import News from './News';
-// import NewsBySection from './NewsBySection';
-// import NewsByEdition from './NewsByEdition';
-// import Sections from './Sections';
-// import TopNav from './TopNav';
 import Guardian from './Guardian.js';
+
 
 function App() {
   return (
@@ -16,19 +8,11 @@ function App() {
 
       <Container>
         <Row>
-          {/* <Col>
-            <News />
-          </Col> */}
           <Col>
-            <Guardian />
-            {/* <Sections /> */}
-            {/* <NewsBySection /> */}
-            {/* <NewsByEdition editionid="us" /> */}
+            <Guardian edition="all" section='all' />
           </Col>
         </Row>
       </Container>
-
-
 
     </div>
   );

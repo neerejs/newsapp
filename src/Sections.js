@@ -40,10 +40,6 @@ const Sections = () => {
             console.log(news);
         }
 
-
-
-
-
     }
 
 
@@ -51,8 +47,6 @@ const Sections = () => {
         const contentsArray = []
         news.forEach((item, index) => {
             console.log(item);
-
-
 
             contentsArray.push(
                 <div key={index}>

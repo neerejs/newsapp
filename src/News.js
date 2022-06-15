@@ -16,11 +16,8 @@ const News = () => {
 
     const [news, setNews] = useState([]);
     const [searchtext, setSearchText] = useState([])
-
-
-
     const API_KEY = 'V5WOLcnJ6o8LQvnxUpKfXE3kyUIdAyp8Evkmew_Xzpg'
-    //const API_URL = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`;
+
 
     useEffect(() => {
         loadData();
@@ -28,14 +25,8 @@ const News = () => {
     }, []);
 
     const loadData = async (searchvalue) => {
-        // const response = await fetch(API_URL);
-        // const data = await response.json();
-        // setNews(data.articles);
-        // console.log(news);
         var options;
-
         if (searchvalue) {
-
             options = {
                 method: 'GET',
                 url: 'https://api.newscatcherapi.com/v2/search',
@@ -50,10 +41,7 @@ const News = () => {
                 }
             };
         }
-
         else {
-
-
             options = {
                 method: 'GET',
                 url: 'https://api.newscatcherapi.com/v2/search',
@@ -68,11 +56,7 @@ const News = () => {
             console.log(response.data);
             setNews(response.data.articles);
         }).catch(function (error) {
-            //console.error(error);
         });
-
-
-
     }
 
     const getContents = () => {
@@ -80,28 +64,17 @@ const News = () => {
         news.forEach((item, index) => {
             console.log(item);
             contentsArray.push(
-
                 <div key={index}>
-
-
                     <ListGroupItem>
-
                         <Row>
-
                             <Col >
-                            
                                 <Image fluid src={item.media} className="float-sm-start" />
-                                {/* <img src={item.media}  className="float-sm-start img-fluid" alt="..." style={{paddingRight:'20px'}}/> */}
                                 {item.summary}
                                 <br></br>
-
                                 <a rel="noreferrer" target="_blank" href={item.link} className="linkStyle">Read More</a>
-
                             </Col>
                         </Row>
-
                     </ListGroupItem>
-
                 </div>
             )
         })
@@ -111,19 +84,12 @@ const News = () => {
     const handleClick = (e) => {
         e.preventDefault();
         loadData(searchtext)
-
-
     }
 
     return (
         <div>
-
-
-
             <Container>
-
                 <Row style={{ marginBottom: '20px', marginTop: '10px' }}>
-                   
                     <Col>
                         <Header title="Newscatcher API" />
                         <Row style={{ marginTop: "20px" }}>
@@ -137,31 +103,20 @@ const News = () => {
                                         value={searchtext}
                                         onChange={(e) => setSearchText(e.target.value)}
                                     />
-
-
                                     <Button onClick={(e) => handleClick(e)} variant="outline-success" type="submit" >Search</Button>
                                 </Form>
                             </Col>
-
                         </Row>
-
                         <Row style={{ marginTop: "20px" }}>
-
                             <Col>
                                 <ListGroup>
                                     {getContents()}
                                 </ListGroup>
-
                             </Col>
                         </Row>
                     </Col>
-                    
                 </Row>
-
-
-
             </Container>
-
         </div>
     );
 }

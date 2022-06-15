@@ -10,7 +10,7 @@ const NewsBySection = (props) => {
     const {sectionid} = props
   
 
-    //const API_KEY = '08a46ee6-3582-46b5-b4ef-87a7578e48f1';
+
     const API_URL = 'https://content.guardianapis.com/search?api-key=08a46ee6-3582-46b5-b4ef-87a7578e48f1';
 
     useEffect(() => {
@@ -62,9 +62,6 @@ const NewsBySection = (props) => {
                         <Row>
                             <Col>
                                 <h6>{item.sectionName}</h6>
-
-
-
                                 <ListGroupItem>
                                     {item.webTitle}
                                 </ListGroupItem>
