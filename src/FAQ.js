@@ -45,6 +45,7 @@ const FAQ = () => {
                         </Accordion>
                     </Col>
                 </Row>
+                
             </>
             )
         })
@@ -58,6 +59,12 @@ const FAQ = () => {
         <>
 
             <Container>
+                <Row>
+                    <Col>
+                        {getFaq()}
+                    </Col>
+                </Row>
+                <hr></hr>
                 <Row>
                     <Col>
                         {getFaq()}

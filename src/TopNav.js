@@ -70,6 +70,9 @@ const TopNav = () => {
                                 <LinkContainer to="/sections">
                                     <Nav.Link >Sections</Nav.Link>
                                 </LinkContainer>
+                                <LinkContainer to="/faq">
+                                    <Nav.Link >FAQ's</Nav.Link>
+                                </LinkContainer>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
