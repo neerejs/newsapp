@@ -9,6 +9,7 @@ import TopNav from './TopNav.js';
 import Section from './Section.js';
 import Editions from './Editions.js';
 import FAQ from './FAQ.js';
+import FormikForm from './FormikForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path="/sections" element={<Section />}> </Route>
         <Route path="/editions" element={<Editions />}> </Route>
         <Route path="/faq" element={<FAQ />}> </Route>
+        <Route path="/formik" element={<FormikForm />}> </Route>
       </Routes>
     </BrowserRouter>
   </>

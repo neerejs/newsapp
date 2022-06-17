@@ -73,6 +73,9 @@ const TopNav = () => {
                                 <LinkContainer to="/faq">
                                     <Nav.Link >FAQ's</Nav.Link>
                                 </LinkContainer>
+                                <LinkContainer to="/formik">
+                                    <Nav.Link >Formik Form</Nav.Link>
+                                </LinkContainer>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
