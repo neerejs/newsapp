@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 const TopNav = () => {
     const [editions, setEditions] = useState([]);
-    
+
 
     useEffect(() => {
         loadData();
@@ -42,7 +42,7 @@ const TopNav = () => {
         <>
             <div >
 
-                <Navbar bg="dark" variant="dark">
+                {/* <Navbar bg="dark" variant="dark">
                     <Container>
                         <Navbar.Brand href="/">
                             <img
@@ -66,6 +66,45 @@ const TopNav = () => {
                                     {getEditions()}
 
                                 </NavDropdown>
+                                </LinkContainer>
+                                <LinkContainer to="/sections">
+                                    <Nav.Link >Sections</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to="/faq">
+                                    <Nav.Link >FAQ's</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to="/formik">
+                                    <Nav.Link >Formik Form</Nav.Link>
+                                </LinkContainer>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar> */}
+
+                <Navbar bg="dark" expand="lg" variant="dark">
+                    <Container>
+                        <Navbar.Brand href="#home">
+
+                        <img
+                                alt=""
+                                src={neerejLogo}
+                                width="50"
+                                height="50"
+                                className="d-inline-block align-top"
+                            />
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <LinkContainer to="/">
+                                    <Nav.Link >Home</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to="/editions">
+                                    <NavDropdown title="Editions" id="basic-nav-dropdown">
+
+                                        {getEditions()}
+
+                                    </NavDropdown>
                                 </LinkContainer>
                                 <LinkContainer to="/sections">
                                     <Nav.Link >Sections</Nav.Link>
