@@ -40,7 +40,7 @@ const FormikForm = () => {
 
                                 setSubmitting(true)
                                 setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 4));
+                                    alert(JSON.stringify(values, null, 6));
 
                                     const client = contentfulManagement.createClient({
                                         accessToken: 'CFPAT-oUCFauW8e8B0z1etnV5Lx0V0eEegb51Dy4d__550f1k'
@@ -64,7 +64,7 @@ const FormikForm = () => {
                                                     'en-US': values.comments
                                                 },
                                                 grade: {
-                                                    'en-US': values.radio
+                                                    'en-US': values.grade
                                                 }
 
                                             }
@@ -154,43 +154,35 @@ const FormikForm = () => {
                                             ) : null}
                                         </Form.Group>
 
-                                        <Form.Group>
-                                            {['radio'].map((type) => (
-                                                <div key={`inline-${type}`} className="mb-3">
-                                                    <Form.Check
-                                                        inline
-                                                        label="9th grade"
-                                                        name="radio"
-                                                        type={type}
-                                                        id={`inline-${type}-1`}
-                                                        onChange={handleChange}
-                                                        value={values.radio}
-                                                        onBlur={handleBlur}
-                                                    />
-                                                    <Form.Check
-                                                        inline
-                                                        label="10th grade"
-                                                        name="grade"
-                                                        type={type}
-                                                        id={`inline-${type}-2`}
-                                                    />
-                                                    <Form.Check
-                                                        inline
-                                                        label="11th grade"
-                                                        name="grade"
-                                                        type={type}
-                                                        id={`inline-${type}-3`}
-                                                    />
-                                                    <Form.Check
-                                                        inline
-                                                        label="12th grade"
-                                                        name="grade"
-                                                        value={values.label}
-                                                        type={type}
-                                                        id={`inline-${type}-4`}
-                                                    />
-                                                </div>
-                                            ))}
+                                        <Form.Group className="mb-3" controlId="formRadio">
+
+                                            {/* <label htmlFor="email" style={{ display: "block" }}>
+                                                Email
+                                            </label>
+
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="grade"
+                                                    value={values.grade}
+                                                    checked={values.test === "a"}
+                                                    onChange={handleChange()}
+                                                />a
+                                            </label> */}
+
+                                            <Form.Check
+                                                inline
+                                                label="9th grade"
+                                                name="grade"
+
+                                                onChange={handleChange}
+                                                value="9th grade"
+                                                onBlur={handleBlur}
+                                            />
+
+
+
+
                                         </Form.Group>
 
                                         <Button variant="primary" type="submit" disabled={isSubmitting}>
