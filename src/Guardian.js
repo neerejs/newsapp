@@ -69,22 +69,35 @@ const Guardian = (props) => {
         const fiveArray = [];
 
 
-       
-            sections.forEach((item, ind) => {
-                
-                fiveArray.push(
-                    <Carousel.Item>
-                        <Image fluid
-                            className="d-block w-100"
-                            src={item.fields.thumbnail}
-                            alt="First slide"
-                        />
-                    </Carousel.Item>
-                )
 
-                
-            })
-        
+        sections.forEach((item, ind) => {
+
+            fiveArray.push(
+
+                <Carousel.Item>
+                    <Row>
+                        <Col>
+                            <Image fluid
+                                className="d-block w-100"
+                                src={item.fields.thumbnail}
+                                alt="First slide"
+                            />
+                        </Col>
+                        <Col>
+                            <p>
+                                <h3>{item.fields.headline}</h3>
+                                <p>{item.webTitle}</p>
+                            </p>
+                        </Col>
+                    </Row>
+
+                </Carousel.Item>
+
+            )
+
+
+        })
+
 
         return fiveArray;
     }
@@ -93,7 +106,7 @@ const Guardian = (props) => {
             <Container>
                 <Row>
                     <Col style={{ marginTop: "10px", marginBottom: "20px" }}>
-                        <Carousel>
+                        <Carousel style={{backgroundColor:'lightgray'}}>
                             {firstFiveCarousel()}
                         </Carousel>
                     </Col>

@@ -10,10 +10,12 @@ import { useState, useEffect } from "react";
 
 const TopNav = () => {
     const [editions, setEditions] = useState([]);
+    const [states, setState] = useState([]);
 
 
     useEffect(() => {
         loadData();
+        getDevices();
         // eslint-disable-next-line
     }, []);
 
@@ -38,48 +40,43 @@ const TopNav = () => {
         return editionsArray
     }
 
+    const getDevices = async () => {
+        var headers = new Headers();
+        headers.append("X-CSCAPI-KEY", "RzJudWc2V1M4N3hDWlBST3RrMVlQQkdlQkhtc3JRNkp4NEgycWs1eA==");
+
+        var requestOptions = {
+            method: 'GET',
+            headers: headers,
+            redirect: 'follow'
+        };
+
+        
+            const fetchResponse = await fetch('https://api.countrystatecity.in/v1/countries/US/states', requestOptions);
+            const data = await fetchResponse.json();
+            setState(data)
+        
+        
+    }
+    const getContents = () => {
+
+        const contentsArray = [];
+
+        states.forEach((item,ind) => {
+            contentsArray.push(
+                <>
+                    
+                    
+                    <NavDropdown.Item href='#'>{item.name}</NavDropdown.Item>
+                </>
+            )
+        })
+
+        return contentsArray;
+    }
+
     return (
         <>
             <div >
-
-                {/* <Navbar bg="dark" variant="dark">
-                    <Container>
-                        <Navbar.Brand href="/">
-                            <img
-                                alt=""
-                                src={neerejLogo}
-                                width="50"
-                                height="50"
-                                className="d-inline-block align-top"
-                            />
-                            <span style={{ fontSize: "30px" }}>Neerej's News Page</span>
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="me-auto">
-                                <LinkContainer to="/">
-                                    <Nav.Link >Home</Nav.Link>
-                                </LinkContainer>
-                                <LinkContainer to="/editions">
-                                <NavDropdown title="Editions" id="basic-nav-dropdown">
-
-                                    {getEditions()}
-
-                                </NavDropdown>
-                                </LinkContainer>
-                                <LinkContainer to="/sections">
-                                    <Nav.Link >Sections</Nav.Link>
-                                </LinkContainer>
-                                <LinkContainer to="/faq">
-                                    <Nav.Link >FAQ's</Nav.Link>
-                                </LinkContainer>
-                                <LinkContainer to="/formik">
-                                    <Nav.Link >Formik Form</Nav.Link>
-                                </LinkContainer>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar> */}
 
                 <Navbar bg="dark" expand="lg" variant="dark">
                     <Container>
@@ -114,6 +111,11 @@ const TopNav = () => {
                                 </LinkContainer>
                                 <LinkContainer to="/formik">
                                     <Nav.Link >Formik Form</Nav.Link>
+                                </LinkContainer>
+                                <LinkContainer to="/states">
+                                    <NavDropdown title="States">
+                                        {getContents()}
+                                    </NavDropdown>
                                 </LinkContainer>
                             </Nav>
                         </Navbar.Collapse>

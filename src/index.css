@@ -16,3 +16,17 @@ code {
   text-decoration:  none;
   font-size: 20px;
 }
+.carousel-indicators {
+  background-color: transparent;
+  color: red;
+}
+
+.carousel-indicators .active {
+  background-color:red;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  
+  background-color: red;
+ 
+  border: 1px solid black;
+}
