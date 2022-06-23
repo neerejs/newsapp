@@ -1,6 +1,7 @@
-import { Dropdown } from "bootstrap";
+
 import { useState, useEffect } from "react";
-import DropdownButton from 'react-bootstrap/DropdownButton'
+import { Container, Row, Col } from "react-bootstrap";
+import Form from 'react-bootstrap/Form';
 
 const States = () => {
 
@@ -21,23 +22,25 @@ const States = () => {
             redirect: 'follow'
         };
 
-        
-            const fetchResponse = await fetch('https://api.countrystatecity.in/v1/countries/US/states', requestOptions);
-            const data = await fetchResponse.json();
-            setState(data)
-        
-        
+
+        const fetchResponse = await fetch('https://api.countrystatecity.in/v1/countries/US/states', requestOptions);
+        const data = await fetchResponse.json();
+        setState(data)
+
+
     }
 
     const getContents = () => {
 
         const contentsArray = [];
 
-        states.forEach((item,ind) => {
+        states.forEach((item, ind) => {
             contentsArray.push(
                 <>
-                    
-                    <Dropdown.Item>{item.name}</Dropdown.Item>
+
+
+                    <option value={item.name}>{item.name}</option>
+
                 </>
             )
         })
@@ -45,20 +48,29 @@ const States = () => {
         return contentsArray;
     }
 
-    
+
 
 
 
 
     return (
         <>
-            <DropdownButton title="US States">
-            
-               
-                    {getContents()}
-                
-            </DropdownButton>
-            
+            <Container>
+                <Row>
+                    <Col>
+                        <Form.Select aria-label="Default select example">
+
+                            <option>Select the Car Model</option>
+                            {getContents()}
+
+                        </Form.Select>
+                    </Col>
+                </Row>
+            </Container>
+
+
+
+
         </>
     );
 }
